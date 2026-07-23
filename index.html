@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Трекер привычки на 21 день — простой инструмент для формирования регулярности. Отмечайте выполнение каждый день и следите за прогрессом.">
+  <title>Трекер привычки — 21 день</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container brand">
+      <a href="#" class="brand-title" aria-label="На главную">
+        <div class="brand-icon" aria-hidden="true">✓</div>
+        <span>Трекер привычки</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav-link" href="#features">Возможности</a>
+        <a class="nav-link" href="#how-it-works">Как работает</a>
+        <button id="navStartButton" class="nav-cta" type="button">Начать</button>
+      </nav>
+
+      <div class="badge">21 день практики</div>
+    </div>
+  </header>
+
+  <main>
+    <div id="landingSection" class="landing">
+      <section class="hero">
+        <div class="container">
+          <h1>
+            Одна привычка.<br>
+            <span>Один шаг каждый день.</span>
+          </h1>
+          <p>
+            Простой трекер поможет сформировать регулярность за 21 день.
+            Выберите одно действие, отмечайте выполнение и наблюдайте, как привычка становится частью вашего дня.
+          </p>
+          <div class="hero-actions">
+            <button id="heroStartButton" class="button button-primary" type="button">
+              Начать отслеживание
+            </button>
+            <a class="button button-secondary" href="#how-it-works" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;">
+              Узнать больше
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <h2 class="section-title">Почему это работает</h2>
+          <p class="section-subtitle">
+            Минимум отвлечений — только одна привычка, понятный прогресс и мягкое сопровождение на каждом этапе.
+          </p>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">📅</div>
+              <h3>21 день — базовый цикл</h3>
+              <p>Классический период для закрепления действия. После него вы решаете: продолжить ещё 7 дней или начать новую привычку.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">📊</div>
+              <h3>Наглядный прогресс</h3>
+              <p>Кольцо выполнения, статистика и календарь по неделям — всё видно с первого взгляда, без лишних экранов.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🔒</div>
+              <h3>Данные только у вас</h3>
+              <p>Прогресс сохраняется локально в браузере. Никаких регистраций, серверов и передачи личных данных.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="how-it-works">
+        <div class="container">
+          <h2 class="section-title">Как это работает</h2>
+          <p class="section-subtitle">
+            Три простых шага — и вы уже на пути к регулярной привычке.
+          </p>
+
+          <div class="steps">
+            <article class="step">
+              <h3>Выберите одну привычку</h3>
+              <p>Запишите своё действие или выберите готовый пример. Главное — одно конкретное и выполнимое действие.</p>
+            </article>
+
+            <article class="step">
+              <h3>Отмечайте каждый день</h3>
+              <p>Ставьте галочку, когда выполнили привычку. Можно отметить и прошедшие дни, если действие было сделано.</p>
+            </article>
+
+            <article class="step">
+              <h3>Следите за результатом</h3>
+              <p>Через 21 день оцените прогресс и решите: закрепить привычку ещё на неделю или начать новый цикл.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="tracker" class="tracker-section container">
+      <h2 class="tracker-section-title">Ваш трекер</h2>
+
+      <div class="panel" id="setupPanel">
+        <h2>Выберите привычку</h2>
+        <div class="setup-grid">
+          <div class="field">
+            <label for="habitInput">Что вы хотите делать регулярно?</label>
+            <input
+              id="habitInput"
+              class="input"
+              type="text"
+              maxlength="70"
+              placeholder="Например: делать зарядку 10 минут"
+            >
+            <small>Выберите одно простое и понятное действие.</small>
+          </div>
+
+          <div class="field">
+            <label for="habitPreset">Или выберите пример</label>
+            <select id="habitPreset" class="select">
+              <option value="">Не выбрано</option>
+              <option value="Делать зарядку 10 минут">Делать зарядку 10 минут</option>
+              <option value="Читать 15 минут">Читать 15 минут</option>
+              <option value="Ложиться спать до 23:00">Ложиться спать до 23:00</option>
+              <option value="Гулять не менее 30 минут">Гулять не менее 30 минут</option>
+              <option value="Пить стакан воды утром">Пить стакан воды утром</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="startButton" class="button button-primary" type="button">
+            Начать 21 день
+          </button>
+        </div>
+
+        <div id="setupError" class="error" role="alert"></div>
+      </div>
+
+      <section id="trackerSection" class="tracker">
+        <div class="panel">
+          <div class="tracker-top">
+            <div>
+              <p class="badge" style="display:inline-block; margin:0 0 10px;">Текущая привычка</p>
+              <h2 id="habitTitle" class="habit-name"></h2>
+              <p id="habitMeta" class="habit-meta"></p>
+            </div>
+
+            <div id="progressRing" class="progress-ring" aria-label="Общий прогресс">
+              <div class="progress-ring-text">
+                <strong id="progressPercent">0%</strong>
+                <span>выполнено</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span>Выполнено дней</span>
+              <strong id="completedCount">0</strong>
+            </div>
+            <div class="stat">
+              <span>Доступно дней</span>
+              <strong id="availableCount">1</strong>
+            </div>
+            <div class="stat">
+              <span>Всего в трекере</span>
+              <strong id="totalDaysCount">21</strong>
+            </div>
+          </div>
+
+          <div class="week-navigation">
+            <h3 id="weekTitle" class="week-title">Неделя 1</h3>
+            <div class="nav-buttons">
+              <button id="prevWeekButton" class="nav-button" type="button" aria-label="Предыдущая неделя">←</button>
+              <button id="nextWeekButton" class="nav-button" type="button" aria-label="Следующая неделя">→</button>
+            </div>
+          </div>
+
+          <div id="daysGrid" class="days-grid"></div>
+
+          <div id="trackerMessage" class="message" aria-live="polite"></div>
+
+          <div id="completionBox" class="completion">
+            <h3>Период завершён</h3>
+            <p id="completionText"></p>
+            <div id="completionButtons" class="button-row"></div>
+          </div>
+
+          <div class="button-row">
+            <button id="resetButton" class="button button-danger" type="button">
+              Начать заново
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-links" aria-label="Ссылки в подвале">
+        <a href="#features">Возможности</a>
+        <a href="#how-it-works">Как работает</a>
+        <a href="#tracker">Трекер</a>
+      </nav>
+      Прогресс сохраняется только в этом браузере на этом устройстве.
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
