@@ -17,6 +17,7 @@ const habitTitle = document.getElementById("habitTitle");
 const habitMeta = document.getElementById("habitMeta");
 const progressRing = document.getElementById("progressRing");
 const progressPercent = document.getElementById("progressPercent");
+const progressDays = document.getElementById("progressDays");
 const completedCount = document.getElementById("completedCount");
 const availableCount = document.getElementById("availableCount");
 const totalDaysCount = document.getElementById("totalDaysCount");
@@ -140,6 +141,10 @@ function render() {
 
   progressPercent.textContent = `${percentage}%`;
   progressRing.style.setProperty("--progress", percentage);
+  progressRing.setAttribute("aria-valuenow", String(percentage));
+  progressDays.textContent = `${completed} / ${state.totalDays}`;
+  progressRing.classList.toggle("progress-ring--complete", percentage === 100);
+  progressRing.classList.toggle("progress-ring--empty", percentage === 0);
   completedCount.textContent = completed;
   availableCount.textContent = availableDays;
   totalDaysCount.textContent = state.totalDays;
