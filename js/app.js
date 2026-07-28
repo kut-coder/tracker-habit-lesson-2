@@ -309,6 +309,10 @@ function createButton(text, className, onClick) {
 }
 
 function getMaximumVisibleWeek() {
+  return getCurrentWeekIndex();
+}
+
+function getCurrentWeekIndex() {
   const todayIndex = getTodayIndex();
   const availableIndex = Math.min(Math.max(todayIndex, 0), state.totalDays - 1);
   return Math.floor(availableIndex / 7);
@@ -425,6 +429,10 @@ function formatShortDate(date) {
 function formatWeekday(date) {
   const text = new Intl.DateTimeFormat("ru-RU", { weekday: "long" }).format(date);
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+if (state) {
+  visibleWeek = getCurrentWeekIndex();
 }
 
 render();
